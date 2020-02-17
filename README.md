@@ -2,6 +2,15 @@
 
 Use JSS for styling your Svelte and Sapper apps.
 
+## Installation
+
+`npm install svelte-jss --dev`
+
+`yarn add svelte-jss --dev`
+
+**Note**: it's important to install the package as a **dev dependency**, otherwise you will run into
+a [weird error](https://github.com/sveltejs/sapper/issues/592).
+
 ## Use in Svelte
 
 Svelte component example: `Input.svelte`
