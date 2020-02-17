@@ -2,7 +2,7 @@
   "name": "svelte-jss",
   "version": "1.0.0",
   "description": "JSS for Svelte and Sapper",
-  "main": "index.js",
+  "main": "index.mjs",
   "keywords": [
     "svelte",
     "sapper",
