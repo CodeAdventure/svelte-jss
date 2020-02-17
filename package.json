@@ -1,0 +1,18 @@
+{
+  "name": "svelte-jss",
+  "version": "1.0.0",
+  "description": "JSS for Svelte and Sapper",
+  "main": "index.js",
+  "keywords": [
+    "svelte",
+    "sapper",
+    "jss"
+  ],
+  "author": "Dominik Guzei",
+  "license": "ISC",
+  "peerDependencies": {
+    "jss": "^10",
+    "jss-preset-default": "^10",
+    "svelte": "^3"
+  }
+}
