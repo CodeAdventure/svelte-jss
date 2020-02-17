@@ -1,12 +1,15 @@
-import jss, { SheetsManager, SheetsRegistry } from 'jss';
-import preset from 'jss-preset-default';
-import { onDestroy } from 'svelte';
+const jss = require('jss').default;
+const { SheetsManager, SheetsRegistry } = require('jss');
+const jssPresetDefault = require('jss-preset-default').default;
+const { onDestroy } = require('svelte');
 
-jss.setup(preset());
+// SETUP
+jss.setup(jssPresetDefault());
 const SSR_TAG_NAME = 'svelte-jss-ssr';
 const registry = new SheetsRegistry();
 const manager = new SheetsManager();
 
+// HELPERS
 const addSheet = (styles) => {
   let sheet = manager.get(styles);
   if (!sheet) {
@@ -17,6 +20,7 @@ const addSheet = (styles) => {
   return sheet;
 
 };
+
 const manageStyles = (styles) => {
   const sheet = addSheet(styles);
   // Attach sheet once + increment ref count
@@ -28,16 +32,18 @@ const manageStyles = (styles) => {
   return sheet;
 };
 
-export const useStyles = (styles) => {
+// PUBLIC API
+
+exports.useStyles = (styles) => {
   if (!styles) throw new Error(`Cannot manage these styles: ${styles}`);
   return manageStyles(styles).classes;
 };
 
-export const getSSRStyleTag = () => {
+exports.getSSRStyleTag = () => {
   return `<style id="${SSR_TAG_NAME}">${registry.toString()}</style>`;
 };
 
-export const removeSSRStyleTag = () => {
+exports.removeSSRStyleTag = () => {
   const ssrStyles = document.getElementById(SSR_TAG_NAME);
   ssrStyles.parentNode.removeChild(ssrStyles);
 };
