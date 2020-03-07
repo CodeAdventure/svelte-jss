@@ -30,7 +30,7 @@ Svelte component example: `Input.svelte`
   });
 </script>
 
-<input class={styles.button} />
+<input class={styles.input} />
 ```
 
 ## Server Side Rendering with Sapper
