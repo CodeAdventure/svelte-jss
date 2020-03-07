@@ -1,10 +1,8 @@
 const jss = require('jss').default;
 const { SheetsManager, SheetsRegistry } = require('jss');
-const jssPresetDefault = require('jss-preset-default').default;
 const { onDestroy } = require('svelte');
 
 // SETUP
-jss.setup(jssPresetDefault());
 const SSR_TAG_NAME = 'svelte-jss-ssr';
 const registry = new SheetsRegistry();
 const manager = new SheetsManager();

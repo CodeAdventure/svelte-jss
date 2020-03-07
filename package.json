@@ -4,15 +4,15 @@
   "description": "JSS for Svelte and Sapper",
   "main": "index.js",
   "keywords": [
-    "svelte",
+    "css",
+    "jss",
     "sapper",
-    "jss"
+    "svelte"
   ],
   "author": "Dominik Guzei",
   "license": "ISC",
   "peerDependencies": {
     "jss": "^10",
-    "jss-preset-default": "^10",
     "svelte": "^3"
   }
 }

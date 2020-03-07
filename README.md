@@ -49,8 +49,26 @@ For example in your `routes/_layout.svelte`:
   <main>
     <slot></slot>
   </main>
-  <Jss /> <!-- Include after all other components -->
+  
+  <!-- Include after all other components -->
+  <Jss />
+
 </div>
 ```
 
 `svelte-jss` ensures that only styles that are actually used are included in your SSR.
+
+## How to configure JSS
+
+Setup JSS plugins before any components using jss are mounted.
+E.g: in the script area of the `_layout.svelte` component:
+
+```svelte
+<script>
+  import jss from 'jss';
+  import jssPresetDefault from 'jss-preset-default';
+  jss.setup(jssPresetDefault());
+</script>
+
+<!-- Your components -->
+```
