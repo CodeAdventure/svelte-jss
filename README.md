@@ -33,6 +33,21 @@ Svelte component example: `Input.svelte`
 <input class={styles.input} />
 ```
 
+### Cross-component theming
+
+Use a svelte store to hold your styles and reactive statements in your components to update dynamically
+whenever the value of the store changes:
+
+```svelte
+<script>
+  import { useStyles } from 'svelte-jss';
+  import { myCustomThemeStore } from './my/custom/theme.js';
+  $: styles = useStyles($myCustomThemeStore);
+</script>
+
+<input class={styles.input} />
+```
+
 ## Server Side Rendering with Sapper
 
 To enable SSR of the JSS styles used in any of your Svelte components you just need
